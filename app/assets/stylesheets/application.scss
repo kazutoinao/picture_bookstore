@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+.form-label {
+  display: inline-block;
+  margin-right: 10px;
+}
+.form-text {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.header {
+  padding-left: 20px;
+}

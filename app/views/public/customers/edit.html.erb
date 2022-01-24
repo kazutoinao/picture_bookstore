@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <h4 class="header col-lg-2 text-center bg-light my-4 ml-5">会員情報編集</h4>
+  </div>
+  <%= form_with model:@customer, url:customers_path, local: true do |f| %>
+  <div class="row col-md-11">
+    <%= f.label :氏名, class:"col-md-5 my-2" %>
+    <%= f.text_field :last_name, class:"col-md-3 my-2" %>
+    <%= f.text_field :first_name, class:"col-md-3 my-2" %>
+    <%= f.label :フリガナ, class:"col-md-5 my-2" %>
+    <%= f.text_field:last_name_kana, class: "col-md-3 my-2" %>
+    <%= f.text_field:first_name_kana, class: "col-md-3 my-2" %>
+    <%= f.label :郵便番号, class:"col-md-5 my-2" %>
+    <%= f.text_field:postal_code, class:"col-md-6 my-2" %>
+    <%= f.label :住所, class:"col-md-5 my-2" %>
+    <%= f.text_field:address, class:"col-md-6 my-2" %>
+    <%= f.label :電話番号, class:"col-md-5 my-2" %>
+    <%= f.text_field:telephone_number, class:"col-md-6 my-2" %>
+    <%= f.label :メールアドレス, class:"col-md-5 my-2" %>
+    <%= f.text_field:email, class:"col-md-6 my-2" %>
+    <%= f.submit "編集内容を保存する", class: "btn btn-success my-2 mx-auto" %>
+  </div>
+  <% end %>
+  <%= link_to "退会する",unsubscribe_customers_path,class:"btn btn-primary btn-lg" %>
+</div>
