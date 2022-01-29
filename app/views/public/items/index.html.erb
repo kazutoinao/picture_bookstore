@@ -1,13 +1,18 @@
-<%= link_to "0歳児", category_search_items_path(:category_id => 1) %></br>
-<%= link_to "1歳児", category_search_items_path(:category_id => 2) %></br>
-<%= link_to "2歳児", category_search_items_path(:category_id => 3) %></br>
-<%= link_to "3歳児", category_search_items_path(:category_id => 4) %></br>
-<%= link_to "4歳児", category_search_items_path(:category_id => 5) %></br>
-<%= link_to "5歳児", category_search_items_path(:category_id => 6) %></br>
-
-<% @items.each do |item| %>
-  <%= item.name %>,
-  <%= item.introduction %>,
-  <%= item.price %>,
-  <%= item.category.name %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <h4 class="header col-lg-2 text-center bg-light my-4 ml-5">商品一覧</h4>
+  </div>
+    <div class="col-md-9">
+      <% @items. each do |item| %>
+      <div class="item mr-5">
+        <%= link_to item_path(item) do %>
+          <%= attachment_image_tag item, :image, size: "100x100" %>
+        <% end %>
+        <p><%= item.name %></p>
+        <p><%= item.author %></p>
+        <p><%= item.illustrator %></p>
+        <p><%= item.price %></p>
+      </div>
+      <% end %>
+    </div>
+</div>
