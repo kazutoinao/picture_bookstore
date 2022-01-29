@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
-  root to: 'public/homes#top'
- devise_for :admins, path: 'admin',controllers: {
-  sessions:      'admin/sessions',
-  passwords:     'admin/passwords',
-  registrations: 'admin/registrations'
- }
- scope module: :public do
- resource :customers, only: [:show, :edit, :update] do
+  root to: 'public/items#top'
+  devise_for :admins, path: 'admin',controllers: {
+    sessions:      'admin/sessions',
+    passwords:     'admin/passwords',
+    registrations: 'admin/registrations'
+  }
+  scope module: :public do
+    resource :customers, only: [:show, :edit, :update] do
       collection do
         get 'unsubscribe'
         patch 'withdraw'
       end
     end
   end
-devise_for :customers, controllers: {
-  sessions:      'public/sessions',
-  passwords:     'public/passwords',
-  registrations: 'public/registrations'
-}
+  devise_for :customers, controllers: {
+    sessions:      'public/sessions',
+    passwords:     'public/passwords',
+    registrations: 'public/registrations'
+  }
 
 # devise_for(
 #   :customers,
@@ -32,20 +32,24 @@ devise_for :customers, controllers: {
 #   end
 
 
- namespace :admin do
+  namespace :admin do
     get 'homes/top' => 'homes#top'
-    resources :items, only: [:index, :new, :create, :show, :edit, :update]
+    resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
- end
+  end
 
-    scope module: :public do
+  scope module: :public do
     get 'homes/top' => 'homes#top'
     get 'homes/about' => 'homes#about'
-    resources :items, only: [:index, :show]
-
+    resources :items, only: [:index, :show] do
+      collection do
+        get 'category_search'
+        get 'search'
+      end
+    end
     resources :cart_items, only: [:index, :update, :create, :destroy] do
       collection do
         delete 'destroy_all'
