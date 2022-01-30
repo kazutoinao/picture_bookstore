@@ -62,5 +62,6 @@ Rails.application.routes.draw do
       end
     end
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
+    resources :reviews, only: [:new, :show, :create, :edit, :update, :destroy]
   end
 end
