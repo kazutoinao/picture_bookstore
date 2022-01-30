@@ -1,0 +1,21 @@
+<h2>商品レビュー</h2>
+<%= form_with model: @review, url: item_reviews_path, local: true do |form| %>
+  <div>
+    <%= form.label :コメント %>
+    <%= form.text_field :review_body %>
+  </div>
+  <div class="review-evaluation">
+    <label>評価</label>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<script>
+  $('.review-evaluation').raty({
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: 'review[evaluation]' //登録するモデル名とカラム名を記述
+  });
+</script>

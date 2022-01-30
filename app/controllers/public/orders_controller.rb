@@ -3,7 +3,7 @@ class Public::OrdersController < ApplicationController
     @customer=current_customer
     @order=Order.new
     @address=Address.all
-  end
+　end
 
   def  confirm
     @total_price=0

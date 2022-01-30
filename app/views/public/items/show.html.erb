@@ -13,9 +13,45 @@
       <%= form_with model: @cart_item,url:cart_items_path, local: true do |f| %>
         <%= f.select :amount, options_for_select((1..20).to_a) %>
         <%= f.hidden_field :item_id, value: @item.id%>
-        <%= f.hidden_field :customer_id, value: current_customer.id%>
+        <%= f.hidden_field :customer_id, value: current_customer.id %>
         <%= f.submit "カートに入れる", class:"btn btn-success" %>
       <% end %>
-      <%= link_to "レビューを投稿する",edit_admin_item_path(@item),class:"btn btn-success btn-lg"%>
+      <%= link_to "レビューを投稿する",new_item_review_path(@item),class:"btn btn-success btn-lg"%>
+      <h1>レビュー一覧</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>コメント</th>
+            <th>評価</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reviews.each do |review| %>
+            <tr>
+              <td><%= review.review_body %></td>
+              <td class="review-evaluation" data-score="<%= review.evaluation %>"></td>
+              <td>
+                <% if review.customer_id == current_customer.id %>
+                <%= link_to "編集",edit_item_review_path(@item, review),class:"btn btn-success btn-lg"%>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <script>
+        $('.review-evaluation').empty();
+        $('.review-evaluation').raty({
+          readOnly: true,
+          score: function() {
+            return $(this).attr('data-score');
+          },
+          starOn: "<%= asset_path('star-on.png') %>",
+          starOff: "<%= asset_path('star-off.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+        });
+      </script>
     </div>
   </div>
+</div>

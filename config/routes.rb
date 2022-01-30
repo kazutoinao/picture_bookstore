@@ -35,7 +35,6 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'homes/top' => 'homes#top'
     resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy]
-    resources :genres, only: [:index, :create, :edit, :update]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
@@ -49,6 +48,7 @@ Rails.application.routes.draw do
         get 'category_search'
         get 'search'
       end
+      resources :reviews, only: [:new, :show, :create, :edit, :update, :destroy]
     end
     resources :cart_items, only: [:index, :update, :create, :destroy] do
       collection do
@@ -62,6 +62,6 @@ Rails.application.routes.draw do
       end
     end
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
-    resources :reviews, only: [:new, :show, :create, :edit, :update, :destroy]
+
   end
 end
