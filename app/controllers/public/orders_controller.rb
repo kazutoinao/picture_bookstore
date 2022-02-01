@@ -1,9 +1,9 @@
 class Public::OrdersController < ApplicationController
- def  new
+  def  new
     @customer=current_customer
     @order=Order.new
     @address=Address.all
-　end
+  end
 
   def  confirm
     @total_price=0
@@ -31,7 +31,6 @@ class Public::OrdersController < ApplicationController
       @order.payment_method="transfer"
     end
   end
-
   def  complete
   end
 
@@ -66,9 +65,9 @@ class Public::OrdersController < ApplicationController
   end
   private
   def order_params
-      params.require(:order).permit(:payment_method, :address, :name, :postal_code, :total_payment, :shipping_cost, :status)
+    params.require(:order).permit(:payment_method, :address, :name, :postal_code, :total_payment, :shipping_cost, :status)
   end
   def order_details_params
-      params.require(:order_details).permit(:order_id, :item_id, :price, :amount, :making_status)
+    params.require(:order_details).permit(:order_id, :item_id, :price, :amount, :making_status)
   end
 end
