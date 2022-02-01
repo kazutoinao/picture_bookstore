@@ -7,7 +7,6 @@ class Public::AddressesController < ApplicationController
     def  create
       @address=Address.new(address_params)
     end
-    end
 
     def  edit
       @address=Address.find(params[:id])
