@@ -1,19 +1,20 @@
  <div class="container my-5">
     <div class="row">
-      <h5 class="offset-md-1 col-md-11">キーワードで検索する</h5>
+      <!--<h5 class="offset-md-1 col-md-3"></h5>-->
+      <div class="offset-md-3 col-md-5">
         <%= search_form_for @q, url: search_items_path do |f| %>
-          <%= f.label :name_cont, '絵本のタイトル' %>
+          <%= f.label :name_cont, '絵本のタイトルで検索する' %>
           <%= f.search_field :name_cont %>
-          <br>
           <%= f.submit '検索' %>
         <% end %>
-      <h5 class="offset-md-1 col-md-11">対象年齢で絵本を探す</h5>
-        <%= link_to "0歳児", category_search_items_path(:category_id => 1) %></br>
-        <%= link_to "1歳児", category_search_items_path(:category_id => 2) %></br>
-        <%= link_to "2歳児", category_search_items_path(:category_id => 3) %></br>
-        <%= link_to "3歳児", category_search_items_path(:category_id => 4) %></br>
-        <%= link_to "4歳児", category_search_items_path(:category_id => 5) %></br>
-        <%= link_to "5歳児", category_search_items_path(:category_id => 6) %></br>
+      </div>
+      <p class="offset-md-3 col-md-5">対象年齢で絵本を探す</p>
+        <%= link_to "0歳児", category_search_items_path(:category_id => 1) %>
+        <%= link_to "1歳児", category_search_items_path(:category_id => 2) %>
+        <%= link_to "2歳児", category_search_items_path(:category_id => 3) %>
+        <%= link_to "3歳児", category_search_items_path(:category_id => 4) %>
+        <%= link_to "4歳児", category_search_items_path(:category_id => 5) %>
+        <%= link_to "5歳児", category_search_items_path(:category_id => 6) %>
       <h2 class="offset-md-1 col-md-11">新着商品</h2>
       <div class="offset-md-1 col-md-11">
         <% @items. first(4).each do |item| %>

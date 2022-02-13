@@ -6,8 +6,8 @@
   <div class="row">
     <div class="col-10 mx-auto my-4 text-center ">
       <%= form_with model: @admin, url:admin_session_path, local: true do |f| %>
-      <%= f.label :"メールアドレス", class:"" %>
-      <%= f.email_field :email, class:"col-lg-3", autofocus: true, autocomplete: "email" %></br>
+      <%= f.label :"メールアドレス", class:"col-lg-3" %>
+      <%= f.email_field :email, class:"col-lg-3 my-1", autofocus: true, autocomplete: "email" %></br>
       <%= f.label :"パスワード", class:"col-lg-3" %>
       <%= f.password_field :password, class:"col-lg-3 my-1", autocomplete: "current-password" %></br>
       <button type="submit" class="btn btn-primary my-5">ログイン</button>
