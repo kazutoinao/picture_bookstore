@@ -1,9 +1,4 @@
 class Public::ItemsController < ApplicationController
-  def top
-    @items=Item.all
-    @q = Item.ransack(params[:q])
-  end
-
   def index
     @items=Item.all
   end

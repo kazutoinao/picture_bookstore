@@ -7,9 +7,9 @@
           <h5 class="offset-md-1 col-md-5">購入者</h5>
           <p class="offset-md-1 col-md-5"><%= @order.customer.last_name+@order.customer.first_name %></p>
           <h5 class="offset-md-1 col-md-5">注文日</h5>
-          <p class="offset-md-1 col-md-5"><%= @order.created_at %></p>
+          <p class="offset-md-1 col-md-5"><%= l @order.created_at, format: :short %></p>
           <h5 class="offset-md-1 col-md-5">配送先</h5>
-          <p class="offset-md-1 col-md-5"><%= @order.postal_code %><%= @order.address %></br><%= @order.name %></p>
+          <p class="offset-md-1 col-md-5"><%= @order.postal_code %></br><%= @order.address %></br><%= @order.name %></p>
           <h5 class="offset-md-1 col-md-5">支払い方法</h5>
           <p class="offset-md-1 col-md-5"><%= @order.payment_method_i18n %></p>
   </div>
@@ -35,10 +35,12 @@
   <% @total_price=@total_price+order_detail.item.with_tax_price*order_detail.amount %>
   <% end %>
  </table>
-     <h5>商品合計</h5>
-     <p><%= @total_price %></p>
-     <h5>送料</h5>
-     <p><%= @order.shipping_cost %></p>
-     <h5>請求金額合計</h5>
-     <p><%= @order.total_payment %></p>
+  <div class="float-right">
+    <h5>商品合計</h5>
+    <p><%= @total_price %>円</p>
+    <h5>送料</h5>
+    <p><%= @order.shipping_cost %>円</p>
+    <h5>請求金額合計</h5>
+    <p><%= @order.total_payment %>円</p>
+  </div>
 </div>

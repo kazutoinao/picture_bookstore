@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'public/items#top'
+  root to: 'public/homes#top'
   devise_for :admins, path: 'admin',controllers: {
     sessions:      'admin/sessions',
     passwords:     'admin/passwords',

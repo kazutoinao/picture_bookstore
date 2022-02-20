@@ -64,8 +64,9 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'kaminari'
 gem 'active_hash'
 gem 'ransack'
-
+gem 'enum_help'
 gem 'dotenv-rails'
+gem 'rails-i18n', '~> 5.1'
 group :production do
   gem 'mysql2'
 end
