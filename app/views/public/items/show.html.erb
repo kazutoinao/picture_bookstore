@@ -5,18 +5,20 @@
     </div>
     <div class="col-md-4">
         <h1><%=@item.name %></h1>
-        <p><%= @item.author %></p>
-        <p><%= @item.illustrator %></p>
-         <p><%= @item.category.name %></p>
+        <p><%= @item.author %>作</p>
+        <p><%= @item.illustrator %>絵</p>
+        <p>適応年齢　<%= @item.category.name %></p>
         <p><%= @item.introduction %></p>
-        <h5><%= @item.with_tax_price %></h5></br>
+        <p>税込<%= @item.with_tax_price %>円</p></br>
       <%= form_with model: @cart_item,url:cart_items_path, local: true do |f| %>
-        <%= f.select :amount, options_for_select((1..20).to_a) %>
+      　<% if customer_signed_in? %>
+        <%= f.select :amount, options_for_select((1..20).to_a) %>冊</br>
         <%= f.hidden_field :item_id, value: @item.id%>
         <%= f.hidden_field :customer_id, value: current_customer.id %>
         <%= f.submit "カートに入れる", class:"btn btn-success" %>
+      　<%= link_to "レビューを投稿する",new_item_review_path(@item),class:"btn btn-success btn-lg my-3" %>
       <% end %>
-      <%= link_to "レビューを投稿する",new_item_review_path(@item),class:"btn btn-success btn-lg"%>
+      <% end %>
       <h1>レビュー一覧</h1>
       <table>
         <thead>
