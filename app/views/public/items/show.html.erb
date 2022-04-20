@@ -9,10 +9,10 @@
         <p><%= @item.illustrator %>絵</p>
         <p>適応年齢　<%= @item.category.name %></p>
         <p><%= @item.introduction %></p>
-        <p>税込<%= @item.with_tax_price %>円</p></br>
+        <p>税込<%= @item.with_tax_price %>円</p>
       <%= form_with model: @cart_item,url:cart_items_path, local: true do |f| %>
       　<% if customer_signed_in? %>
-        <%= f.select :amount, options_for_select((1..20).to_a) %>冊</br>
+        <%= f.select :amount, options_for_select((1..20).to_a) %>冊
         <%= f.hidden_field :item_id, value: @item.id%>
         <%= f.hidden_field :customer_id, value: current_customer.id %>
         <%= f.submit "カートに入れる", class:"btn btn-success" %>
