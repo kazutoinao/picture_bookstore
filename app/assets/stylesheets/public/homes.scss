@@ -1,13 +1,26 @@
 // Place all the styles related to the public::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-main{
-    background-color: #F5F5DC;
+.main{
+     background-color: #EEFFFF;
 }
 
-.heading{
-        background-image: url(library.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+.main-visual{
+            width: 100%;
+            height: 400px;
+            background-image: url(heading.jpeg);
+            background-size: 100% 100%;
+            background-position: center;
+            text-align: center;
+}
+
+.main-visual-text{
+                 text-align: center
+}
+
+
+
+
+.concept{
+        height: 200px;
 }
