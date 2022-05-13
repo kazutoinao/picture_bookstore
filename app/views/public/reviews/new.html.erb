@@ -1,11 +1,11 @@
 <h2>商品レビュー</h2>
 <%= form_with model: @review, url: item_reviews_path, local: true do |form| %>
+  <div class="review-evaluation">
+    <label>評価</label>
+  </div>
   <div>
     <%= form.label :コメント %>
     <%= form.text_field :review_body %>
-  </div>
-  <div class="review-evaluation">
-    <label>評価</label>
   </div>
   <div class="actions">
     <%= form.submit %>

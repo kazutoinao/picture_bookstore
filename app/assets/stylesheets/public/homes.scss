@@ -8,13 +8,21 @@
 .main-visual-text {
                   font-size: 4vw;
 }
-// @media screen and (min-width:480px) {
-//     /*　画面サイズが480pxからはここを読み込む　*/
-// .main-visual-text {
 
+.main-visual-image {
+                   width: 100%;
+                   max-width: 100%;
+                   height: auto;
+}
 
-// }
-// }
+.title {
+       font-size: 25px;
+}
+
+.item {
+      font-size: 20px;
+}
+
 .concept{
         height: 200px;
 }

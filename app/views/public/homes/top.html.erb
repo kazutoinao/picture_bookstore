@@ -19,20 +19,18 @@
       </tbody>
     </table>
     <div class="col-12 col-md-10">
-      <div class="row">
         <%= search_form_for @q, url: search_items_path do |f| %>
-        <div class="col-12 col-md-12">
-          <%= f.label :name_cont, '絵本の名前で検索', class: "col-md-5 text-center"  %>
-        　<%= f.search_field :name_cont, class: "col-md-3" %>
-          <%= f.submit '検索', class: "col-md-3" %>
+        <div class="row">
+          <%= f.label :name_cont, '絵本の名前で検索', class: "col-md-3 title pt-2 text-center"  %>
+          <%= f.search_field :name_cont, placeholder: "検索", class: "col-md-4" %>
+          <%= f.submit '検索', class: "ml-2 col-md-4" %>
         </div>
         <% end %>
-      </div>
       <h2 class="py-3">新着商品</h2>
       <div class="item row ml-5">
-        <% @items. first(4).each do |item| %>
+        <% @items. first(8).each do |item| %>
         <%= link_to item_path(item.id) do %>
-          <div class=" col-12 col-md-3 text-center">
+          <div class=" col-12 col-md-3 item text-center">
             <%= attachment_image_tag item, :image, :size => '180x120'%></br>
             <%= item.name %></br>
             <%= item.price %>円（税抜)</br>
