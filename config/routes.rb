@@ -19,19 +19,6 @@ Rails.application.routes.draw do
     registrations: 'public/registrations'
   }
 
-# devise_for(
-#   :customers,
-#   path: 'customers',
-#   module: 'public',
-#   skip: [:registration]
-#   )
-
-#   devise_scope :customers do
-#     get 'customers/sign_up' => 'public/registrations#new'
-#     post 'customers' => 'public/registrations#create'
-#   end
-
-
   namespace :admin do
     get 'homes/top' => 'homes#top'
     resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy]

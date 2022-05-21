@@ -39,10 +39,16 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'capybara'
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'faker'
+  # Linter
+  gem "rubocop", require: false # Linter
+  gem "rubocop-performance", require: false # Linter
+  gem "rubocop-rails", require: false # Linter
+  gem "rubocop-rspec", require: false # Linter
 end
 
 group :development do
