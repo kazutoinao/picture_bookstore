@@ -1,7 +1,10 @@
 class Public::CartItemsController < ApplicationController
     def  index
+        #ログインしているお客様のカートアイテム
         @cart_items=current_customer.cart_items
+        #0を代入
         @total=0
+        #カートアイテムログインしているお客様のカートアイテム
         @cart_items.each do |cart_item|
             @total=@total+cart_item.total_price
         end

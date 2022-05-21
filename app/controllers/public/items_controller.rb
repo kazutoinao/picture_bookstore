@@ -5,7 +5,6 @@ class Public::ItemsController < ApplicationController
 
   def show
     @item=Item.find(params[:id])
-    binding.pry
     @cart_item=CartItem.new
     @reviews=@item.reviews
   end
