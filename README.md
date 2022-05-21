@@ -24,10 +24,6 @@
 <https://docs.google.com/spreadsheets/d/1fOsVAgWIySeHvjhs3_m5_qOZIFz1CAJd14mLW-qWe28/edit#gid=1739957604>
 - 詳細設計書
 <https://docs.google.com/spreadsheets/d/1_9wHxvrI8OC-RtXnBBlnILp5Lnsa8DDD/edit?usp=sharing&ouid=104800520134959026578&rtpof=true&sd=true>
-- 詳細設計書
-<https://docs.google.com/spreadsheets/d/1_9wHxvrI8OC-RtXnBBlnILp5Lnsa8DDD/edit?usp=sharing&ouid=104800520134959026578&rtpof=true&sd=true
->>>>>>> origin
-
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1GQjLGJ-8UrnX5livohLa76PAlIXXeXyMem_SLT--tcI/edit#gid=0>
 
