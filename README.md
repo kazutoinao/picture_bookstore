@@ -20,7 +20,8 @@
 - 子どもの発達年齢にあった絵本を見つけたい時
 
 ## 設計書
-<>
+- 詳細設計書
+<https://docs.google.com/spreadsheets/d/1_9wHxvrI8OC-RtXnBBlnILp5Lnsa8DDD/edit?usp=sharing&ouid=104800520134959026578&rtpof=true&sd=true
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1GQjLGJ-8UrnX5livohLa76PAlIXXeXyMem_SLT--tcI/edit#gid=0>
