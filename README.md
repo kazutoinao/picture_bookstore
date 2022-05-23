@@ -20,6 +20,8 @@
 - 子どもの発達年齢にあった絵本を見つけたい時
 
 ## 設計書
+- ER図
+<https://drive.google.com/file/d/1J8zd5Ow_7jMPOyAfBQHpEPPXxCK4bf7O/view?usp=sharing>
 - テーブル定義書
 <https://docs.google.com/spreadsheets/d/1fOsVAgWIySeHvjhs3_m5_qOZIFz1CAJd14mLW-qWe28/edit#gid=1739957604>
 - 詳細設計書
