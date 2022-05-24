@@ -5,7 +5,7 @@ class Public::OrdersController < ApplicationController
     @address=Address.all
   end
 
-  def  confirm
+  def confirm
     @total_price=0
     @cart_items=current_customer.cart_items
     @order=Order.new(order_params)
