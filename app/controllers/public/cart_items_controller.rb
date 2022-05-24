@@ -5,11 +5,8 @@ class Public::CartItemsController < ApplicationController
         #0を代入
         @total=0
         #カートアイテムログインしているお客様のカートアイテム
-        @cart_items.each do |cart_item|
-            @total=@total+cart_item.total_price
-        end
+       @total = @cart_items.map(&:total_price).sum
     end
-
     def  update
        @cart_item=CartItem.find(params[:id])
     if @cart_item.update(amount_params)
