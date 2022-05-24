@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class Public::ReviewsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
