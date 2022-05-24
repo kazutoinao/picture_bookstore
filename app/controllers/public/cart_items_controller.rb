@@ -1,12 +1,13 @@
 class Public::CartItemsController < ApplicationController
     def  index
-        #ログインしているお客様のカートアイテム
+        # ログインしているお客様のカートアイテム
         @cart_items=current_customer.cart_items
-        #0を代入
+        # 0を代入
         @total=0
-        #カートアイテムログインしているお客様のカートアイテム
+       # カートアイテムログインしているお客様のカートアイテム
        @total = @cart_items.map(&:total_price).sum
     end
+
     def  update
        @cart_item=CartItem.find(params[:id])
     if @cart_item.update(amount_params)
